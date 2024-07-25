@@ -89,11 +89,10 @@ export default {
       return Object.values(unique);
     },
     uniqueInvoicesCount() {
-      const uniqueInvoices = new Set(this.invoices.map(inv => inv.numero));
+      const uniqueInvoices = new Set(this.products.map(product => product.invoiceNumber));
       return uniqueInvoices.size;
     }
   },
-
   methods: {
     handleFileUpload(files) {
       this.products = [];
@@ -164,7 +163,7 @@ export default {
     },
     saveConfig(productsWithMultiplicador) {
       this.products = this.products.map(product => {
-        const multiplicador = productsWithMultiplicador.find(p => p.codProd === product.codProd)?.multiplicador || '';
+        const multiplicador = productsWithMultiplicador.find(p => p.codProd === product.codProd)?.multiplicador || 1;
         return {
           ...product,
           multiplicador

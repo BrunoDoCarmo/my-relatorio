@@ -2,9 +2,9 @@
   <div class="invoice-section">
     <div class="filters">
       <select v-model="localSelectedFilter" class="filter-select" @change="handleFilterChange" :disabled="products.length === 0">
-        <option value="invoiceNumber">Número da Nota Fiscal</option>
-        <option value="codProd">Código do Produto</option>
-        <option value="nomeProd">Nome do Produto</option>
+        <option value="invoiceNumber">NRO DA NF-E</option>
+        <option value="codProd">COD DO PROD</option>
+        <option value="nomeProd">NOME DO PROD</option>
       </select>
       <input
         ref="searchInput"

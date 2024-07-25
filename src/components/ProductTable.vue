@@ -3,13 +3,12 @@
     <table>
       <thead>
         <tr>
-          <th>Número da Nota</th>
+          <th>Nro da Nota</th>
           <th>Cod. Produto</th>
           <th>Nome Produto</th>
           <th>Quantidade</th>
           <th>Valor Unitário</th>
           <th>Valor Total</th>
-          <th>Multiplicador</th>
           <th>Peso Total</th>
         </tr>
       </thead>
@@ -21,7 +20,6 @@
           <td>{{ product.qProd }}</td>
           <td>{{ product.vlrUnit }}</td>
           <td>{{ product.vlrTotal }}</td>
-          <td>{{ product.multiplicador }}</td>
           <td>{{ product.qProd * product.multiplicador }}</td>
         </tr>
       </tbody>
@@ -39,11 +37,11 @@ export default {
 <style scoped>
 .table-container th,
 .table-container td {
-  width: 8%;
+  width: 10%;
 }
 .table-container th:nth-child(3),
 .table-container td:nth-child(3) {
-  width: 44%;
+  width: 40%;
   padding-left: 1rem;
   text-align: left;
 }
