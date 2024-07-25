@@ -1,7 +1,7 @@
 <template>
   <div class="invoice-section">
     <div class="filters">
-      <select v-model="localSelectedFilter" class="filter-select" @change="handleFilterChange">
+      <select v-model="localSelectedFilter" class="filter-select" @change="handleFilterChange" :disabled="products.length === 0">
         <option value="invoiceNumber">Número da Nota Fiscal</option>
         <option value="codProd">Código do Produto</option>
         <option value="nomeProd">Nome do Produto</option>
@@ -9,6 +9,7 @@
       <input
         ref="searchInput"
         class="pesquisanro"
+        :disabled="products.length === 0"
         type="text"
         v-model="internalSearchQuery"
         @input="onInput"
@@ -16,8 +17,8 @@
       />
     </div>
     <div class="botoes">
-      <button class="btn" @click="$emit('open-modal')" :disabled="products.length === 0">Ver Produtos Únicos</button>
-      <button class="btn" @click="clearProducts" :disabled="products.length === 0">Limpar Produtos</button>
+      <button class="btn" @click="$emit('open-modal')" :disabled="products.length === 0">Ver Produtos</button>
+      <button class="btn" @click="clearProducts" :disabled="products.length === 0">Limpar Tabela</button>
     </div>
   </div>
 </template>
@@ -112,8 +113,12 @@ export default {
   display: flex;
   gap: 1rem;
 }
+section:disabled,
+.pesquisanro:disabled,
 .btn:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+  color: #b7b7b7;
+  border-color: #b7b7b7;
 }
 </style>

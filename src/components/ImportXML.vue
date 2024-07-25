@@ -174,10 +174,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.btn:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-</style>
